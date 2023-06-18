@@ -1,7 +1,9 @@
 package com.cafe.system.restImpl;
 
+import com.cafe.system.constants.CafeConstants;
 import com.cafe.system.rest.UserRest;
 import com.cafe.system.service.UserService;
+import com.cafe.system.utils.CafeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +25,7 @@ public class UserRestImpl implements UserRest {
         }catch(Exception e){
             e.printStackTrace();
         }
-
+        return CafeUtils.getResponseEntity(CafeConstants.SOMETHING_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
 
 
     }
